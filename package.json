@@ -1,0 +1,26 @@
+{
+  "name": "tradingdata",
+  "version": "1.0.0",
+  "description": "export trading data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhs007/tradingdata.git"
+  },
+  "keywords": [
+    "bitmex"
+  ],
+  "author": "Zerro Zhao",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/zhs007/tradingdata/issues"
+  },
+  "homepage": "https://github.com/zhs007/tradingdata#readme",
+  "dependencies": {
+    "async": "^2.6.1",
+    "ws": "^6.1.2"
+  }
+}
