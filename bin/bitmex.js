@@ -5,7 +5,7 @@ const process = require('process');
 
 let bitmex = new BitmexDataStream({
     addr: 'wss://www.bitmex.com/realtime',
-    symbols: ['XBTUSD'],
+    symbols: ['XBTUSD', 'XBTM19', 'XBTH19'],
     funcOnClose: () => {
         console.log('bitmex close');
 
