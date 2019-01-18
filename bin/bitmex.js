@@ -6,21 +6,23 @@ const process = require('process');
 let bitmex = new BitmexDataStream({
     addr: 'wss://www.bitmex.com/realtime',
     symbols: ['XBTUSD', 'XBTM19', 'XBTH19'],
-    funcOnClose: () => {
-        console.log('bitmex close');
-
-        bitmex.finish(() => {
-            process.exit();
-        });
-    },
-    funcOnError: (err) => {
-        console.log('bitmex error ' + err);
-
-        bitmex.finish(() => {
-            process.exit();
-        });
-    },
 });
+
+bitmex.cfg.funcOnClose = () => {
+    console.log('bitmex close');
+
+    bitmex.finish(() => {
+        process.exit();
+    });
+};
+
+bitmex.cfg.funcOnError = (err) => {
+    console.log('bitmex error ' + err);
+
+    bitmex.finish(() => {
+        process.exit();
+    });
+};
 
 process.on('unhandledRejection', (reason, p) => {
     console.log('error', 'Unhandled Rejection at: ' + p + ' reason: ' + reason);

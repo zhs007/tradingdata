@@ -17,8 +17,9 @@ COPY ./package.json /home/tradingdata/
 
 WORKDIR /home/tradingdata
 
-RUN npm i
+RUN npm i \
+    && npm i pm2 -g
 
 COPY . /home/tradingdata/
 
-CMD ["node", "./bin/bitmex.js"]
+CMD ["pm2-docker", "start", "./bin/bitmex.js"]
