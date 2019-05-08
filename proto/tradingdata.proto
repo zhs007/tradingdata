@@ -1,0 +1,14 @@
+syntax = "proto3";
+package tradingdatapb;
+
+enum TRADETYPE {
+    TRADETYPE_BUY = 0;
+    TRADETYPE_SELL = 1;
+}
+
+message TradeInfo {
+    string id = 1;
+    int64 curtime = 2;
+    float price = 3;
+    float size = 4;
+}
