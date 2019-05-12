@@ -12,3 +12,20 @@ message TradeInfo {
     float price = 3;
     float size = 4;
 }
+
+message SendTradeData {
+    string market = 1;
+    string symbol = 2;
+    repeated TradeInfo trades = 3;
+}
+
+message ReplySendTradeData {
+    int32 nums = 1;
+    string errInfo = 2;
+}
+
+// TradingDataService - tradingdata service
+service TradingDataService {
+    // translate - translate text
+    rpc sendTradeData(SendTradeData) returns (ReplySendTradeData) {}
+}
